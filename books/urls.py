@@ -18,8 +18,11 @@ from django.urls import path
 
 from books import views
 
+app_name = "books"
+
 urlpatterns = [
-    path("", views.index),
+    path("", views.index, name="index"),
+    path("about_library/", views.about, name="about"),
     path("current_datetime/", views.get_current_datetime),
     path("books/", views.get_books),
     path("books/random/", views.get_random_book),

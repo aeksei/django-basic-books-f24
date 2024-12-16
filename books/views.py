@@ -25,6 +25,10 @@ def index(request: HttpRequest) -> HttpResponse:
     return render(request, template_name)
 
 
+def about(request: HttpRequest) -> HttpResponse:
+    template_name = "about.html"
+    return render(request, template_name)
+
 def get_books(request: HttpRequest) -> HttpResponse:
     return JsonResponse(
         BOOKS,
@@ -57,3 +61,4 @@ def get_book(request: HttpRequest, book_id: int) -> HttpResponse:
             "indent": 4,
         }
     )
+
