@@ -22,7 +22,10 @@ def get_current_datetime(request: HttpRequest) -> HttpResponse:
 
 def index(request: HttpRequest) -> HttpResponse:
     template_name = "index.html"
-    return render(request, template_name)
+    context = {
+        "book_list": BOOKS,
+    }
+    return render(request, template_name, context=context)
 
 
 def about(request: HttpRequest) -> HttpResponse:
