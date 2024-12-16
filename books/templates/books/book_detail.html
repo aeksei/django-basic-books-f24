@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+
+{% block title %}Книга: {{ book.title }}{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <p class="card-text">
+                <b>Автор:</b> {{ book.author }}
+            </p>
+            <p class="card-text">
+                <b>Год издания:</b> {{ book.published_year }}
+            </p>
+            <!-- Другие детали книги могут быть добавлены в зависимости от ваших нужд -->
+            <hr>
+            <h5 class="card-title">Описание книги</h5>
+            <p class="card-text">{{ book.description }}</p>
+        </div>
+    </div>
+
+{% endblock %}

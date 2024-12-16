@@ -55,13 +55,9 @@ def get_random_book(request: HttpRequest) -> HttpResponse:
 
 
 def get_book(request: HttpRequest, book_id: int) -> HttpResponse:
+    template_name = "books/book_detail.html"
     book = get_book_or_404(BOOKS, book_id=book_id)
-
-    return JsonResponse(
-        book,
-        json_dumps_params={
-            "ensure_ascii": False,
-            "indent": 4,
-        }
-    )
-
+    context = {
+        "book": book,
+    }
+    return render(request, template_name, context=context)

@@ -26,5 +26,5 @@ urlpatterns = [
     path("current_datetime/", views.get_current_datetime),
     path("books/", views.get_books),
     path("books/random/", views.get_random_book),
-    path("books/<int:book_id>/", views.get_book),
+    path("books/<int:book_id>/", views.get_book, name="book-detail"),
 ]
