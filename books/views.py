@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.http import HttpRequest, HttpResponse, JsonResponse, Http404
+from django.shortcuts import render
 
 from books.models import BOOKS
 from books import logic
@@ -20,8 +21,8 @@ def get_current_datetime(request: HttpRequest) -> HttpResponse:
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    boby = """<h1>Hello, world!!!</h1>"""
-    return HttpResponse(boby)
+    template_name = "index.html"
+    return render(request, template_name)
 
 
 def get_books(request: HttpRequest) -> HttpResponse:
