@@ -24,7 +24,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("about_library/", views.about, name="about"),
     path("current_datetime/", views.get_current_datetime),
-    path("books/", views.get_books),
+    path("books/", views.get_books, name="book-list"),
     path("books/random/", views.get_random_book),
     path("books/<int:book_id>/", views.get_book, name="book-detail"),
 ]
