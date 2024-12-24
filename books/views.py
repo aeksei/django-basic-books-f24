@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.http import HttpRequest, HttpResponse, JsonResponse, Http404
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from books.models import BOOKS
 from books import logic
@@ -33,6 +34,7 @@ def about(request: HttpRequest) -> HttpResponse:
     return render(request, template_name)
 
 
+@login_required
 def get_books(request: HttpRequest) -> HttpResponse:
     books = BOOKS.copy()  # Чтобы получать книги с чистого листа
 
